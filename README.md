@@ -1,12 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-
-  <img src="https://prodigycommerce.com/wp-content/uploads/2022/04/Platform-Gif-1.gif" alt="logo" width="140"  height="auto" />
-  <br/>
-
-</div>
-
 <!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
@@ -66,6 +59,12 @@ After you're finished please remove all the comments and instructions!
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
+<div align="center">
+
+  <img src="https://prodigycommerce.com/wp-content/uploads/2022/04/Platform-Gif-1.gif" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
 
 # 📖 Hello Rails React <a name="about-project"></a>
 
