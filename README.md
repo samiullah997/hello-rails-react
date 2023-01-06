@@ -1,5 +1,12 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+  <img src="https://prodigycommerce.com/wp-content/uploads/2022/04/Platform-Gif-1.gif" alt="logo" width="140"  height="auto" />
+  <br/>
+
+</div>
+
 <!--
 HOW TO USE:
 This is an example of how you may give instructions on setting up your project locally.
@@ -60,17 +67,17 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Hello Rails React <a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**[your_project__name]** is a...
+**Hello Rails React** is a project that allows you to create a new Rails application with React and PostgreSQL.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+> List the technologies you used to build your project.
 
 <details>
   <summary>Client</summary>
@@ -82,7 +89,7 @@ After you're finished please remove all the comments and instructions!
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://expressjs.com/">Ruby On Rails</a></li>
   </ul>
 </details>
 
@@ -99,9 +106,9 @@ After you're finished please remove all the comments and instructions!
 
 > Describe between 1-3 key features of the application.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Working on React**
+- **Working on Rails**
+- **Working on PostgreSQL**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -127,75 +134,162 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- You need to have git installed in your machine.
+- Install a recent version of Postgres.
+- Already install Rails
+- Already insatll React
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
+### Creating the hello-rails-react
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+- use PostgreSQL database 
+
+```bash
+$   rails new rails-react-tutorial --webpack=react -d=postgresql
+$   cd rails-react-tutorial # Move into the application directory
 ```
---->
+- Now run these commands to install everything.
 
-### Install
-
-Install this project with:
-
-<!--
-Example command:
-
-```sh
-  cd my-project
-  gem install
+```bash
+$   bundle install
+$   rails webpacker:install
+$   rails new rails-react-tutorial --webpack=react -d=postgresql
+$   rails webpacker:install:react
+$   rails generate react:install
+$   yarn install
 ```
---->
 
-### Usage
+### Clone this repository
 
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
+```bash
+$ https://github.com/sja-thedude/hello-rails-react.git
+$ cd hello-rails-react
 ```
---->
 
-### Run tests
+### Create the database
 
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
+```bash
+$   rails db:create   # or
+$   rake db:create
 ```
---->
 
-### Deployment
+### Install linter and 
 
-You can deploy this project using:
+- Rubocop gem
 
-<!--
-Example:
-
-```sh
-
+```bash
+$  bundle init
+$  bundle install
 ```
- -->
+- Stylelint package
+
+```bash
+$  npm init -y
+$  npm install
+$  npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x
+```
+
+- Run linter
+
+```bash
+$  rubocop .
+$  npx stylelint "**/*.{css,scss}" 
+```
+
+- In auto-correct mode, RuboCop will try to automatically fix offenses:
+
+```bash
+$  rubocop -A # or
+$  rubocop --auto-correct-all
+$  npx stylelint "**/*.{css,scss}" --fix 
+```
+
+### Starting up the Web Server
+
+- We can now run:
+
+```bash
+$   rails s # or
+$   rails server -p3000 # to visit http://localhost/
+```
+- To see React-Router working:
+
+```bash
+$  ./bin/webpack-dev-server # enables auto-webpacking
+```
+
+- To restart the server
+
+```bash
+$  sudo service postgresql restart 
+```
+
+#### Listing Existing Routes
+
+- You can now visit `http://localhost:3000` to view your new website!
+
+#### Generate controllers
+
+```bash
+  $  rails generate controller static index  
+  $  rails generate controller api/messages index                 
+```
+
+#### Generate a new React component
+
+```bash
+  $  rails generate react:component Greeting greeting:string 
+  $  rails generate react:component App
+```
+#### NPM
+
+- Redux Thunk
+
+```bash
+  $  Redux Thunk                  
+```
+- Logger for Redux
+
+```bash
+  $  npm i redux-logger                
+```
+
+- React Redux Loading Bar
+
+```bash
+  $  npm i react-redux-loading-bar            
+```
+
+#### Generate Schema
+
+- To push the Migration into the database
+
+```bash
+  $   rails db:migrate
+```
+- We use the seeds.rb file to records in the database
+- To drop, create a table and to migrate and send the seed into the database:
+
+```bash
+  $   rails db:drop db:create db:migrate db:seed  
+```
+
+- To check available routes
+
+```bash
+  $   rails routes  
+```
+
+## Built With
+
+This project is build with:
+
+-  ![Ruby](https://img.shields.io/badge/-Ruby-000000?style=flat&logo=ruby&logoColor=red)
+-  ![Ruby on Rails](https://img.shields.io/badge/-Ruby_on_Rails-000000?style=flat&logo=ruby-on-rails&logoColor=blue)
+- ![React](https://img.shields.io/badge/-React-000000?style=flat&logo=react)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -205,17 +299,11 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤**Author Samiullah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@samiullah997](https://github.com/samiullah997)
+- Twitter: [@samiullahk997](https://twitter.com/samiullahk997)
+- LinkedIn: [Samiullah Khan](https://www.linkedin.com/in/samiullah-khan-2702b7171/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -225,9 +313,9 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Controllers specs]**
+- [ ] **[Processing data in models]**
+- [ ] **[Views]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
